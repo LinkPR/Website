@@ -1,3 +1,11 @@
+/* General image rule for responsiveness */
+img {
+    max-width: 100%;
+    height: auto;
+    /* display: block; /* Uncomment if consistent block behavior is desired */
+    /* box-sizing: border-box; /* Bootstrap usually handles this */
+}
+
 .hero-img {
     max-width:100%;
 }
@@ -14,12 +22,14 @@
 }
 
 .communities-icon {
-    max-width: 96px;
+    max-width: 96px; /* This already implies responsive scaling if parent shrinks */
+    height: auto; /* Added for consistency, though max-width usually implies this with browsers */
 }
 
 .img-150 {
-    width: 150px;
-    height: auto;
+    width: 150px;    /* Target width */
+    max-width: 100%; /* Ensures it scales down if container is smaller */
+    height: auto;    /* Maintain aspect ratio */
 }
 
 .counter-bg {
@@ -31,7 +41,9 @@
 }
 
 .img-100 {
-    max-height: 100px;
+    max-height: 100px; /* Target max height */
+    width: auto;       /* Allow width to adjust to maintain aspect ratio */
+    max-width: 100%;   /* Prevent overflow if original aspect ratio makes it too wide */
 }
 
 .f-32 {
